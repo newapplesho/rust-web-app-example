@@ -26,7 +26,7 @@ $ docker-compose -f docker-compose-local-db.yml build
 $ docker-compose -f docker-compose-local-db.yml up
 ```
 
-##DB Migration
+## DB Migration
 ```
 $ docker-compose -f docker-compose-flyway.yml run --rm flyway migrate
 ```
