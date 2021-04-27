@@ -1,7 +1,7 @@
 # TODO API Server
 
 # 主な内容
-- JSON API ServerのサDDD風なサンプルコードです。
+- JSON API Serverのサンプルコードです。
 - Web Frameworkは[actix-web](https://github.com/actix/actix-web)を使います。
 - DB関連は[sqlx](https://github.com/launchbadge/sqlx)を使います。
   Rustのウェブ開発だと[Diesel](https://github.com/diesel-rs/diesel)も出てきますが、今回はSQLを用いた薄いwrapperを使います。
