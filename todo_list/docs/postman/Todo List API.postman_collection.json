@@ -1,0 +1,577 @@
+{
+	"info": {
+		"_postman_id": "d35463a3-bda9-4619-8d01-454cc0e7b740",
+		"name": "Todo List API",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Todo list",
+			"item": [
+				{
+					"name": "Create Todo list",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"test todo list\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/todo_list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"todo_list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Create Todo list",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"test todo list\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/todo_list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"todo_list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "163"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "date",
+									"value": "Sun, 25 Apr 2021 13:35:02 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"todo_list_id\": \"b865a526-6efe-4eb6-abbc-9dc4c601c5b6\",\n    \"name\": \"test todo list\",\n    \"created_at\": \"2021-04-25T13:35:02.323795\",\n    \"updated_at\": \"2021-04-25T13:35:02.323795\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Todo list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/todo_list?limit=10",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"todo_list"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Optional"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Get Todo list",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/todo_list?limit=10",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"todo_list"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "Optional"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "1641"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 27 Apr 2021 02:06:44 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"todo_list_id\": \"2b695675-0b8f-4df5-a1e5-0feefd1c797f\",\n        \"name\": \"New Todo List\",\n        \"created_at\": \"2021-04-27T01:49:52.970679\",\n        \"updated_at\": \"2021-04-27T01:49:52.970679\"\n    },\n    {\n        \"todo_list_id\": \"fe86f71e-05da-4e3d-8dce-cb3c801c1a29\",\n        \"name\": \"New Todo List\",\n        \"created_at\": \"2021-04-27T01:46:32.691909\",\n        \"updated_at\": \"2021-04-27T01:46:32.691909\"\n    },\n    {\n        \"todo_list_id\": \"c66025ff-f100-4e16-a745-62e0edf70920\",\n        \"name\": \"New Todo List\",\n        \"created_at\": \"2021-04-27T01:45:27.386614\",\n        \"updated_at\": \"2021-04-27T01:45:27.386614\"\n    },\n    {\n        \"todo_list_id\": \"c4edd8bf-785d-4cef-8628-d924a05655cd\",\n        \"name\": \"New Todo List\",\n        \"created_at\": \"2021-04-27T01:44:15.731974\",\n        \"updated_at\": \"2021-04-27T01:44:15.731974\"\n    },\n    {\n        \"todo_list_id\": \"0732ffa8-6a55-4456-84c2-510a35b80bb7\",\n        \"name\": \"New Todo list\",\n        \"created_at\": \"2021-04-27T01:43:33.343837\",\n        \"updated_at\": \"2021-04-27T01:43:33.343837\"\n    },\n    {\n        \"todo_list_id\": \"4890c4a2-091a-4acf-8091-10e9b97428c6\",\n        \"name\": \"New Todo list\",\n        \"created_at\": \"2021-04-27T01:28:04.654675\",\n        \"updated_at\": \"2021-04-27T01:28:04.654675\"\n    },\n    {\n        \"todo_list_id\": \"b3653ef6-9e4f-4faa-aada-6df1626e9d5e\",\n        \"name\": \"New Todo list\",\n        \"created_at\": \"2021-04-27T01:27:55.608521\",\n        \"updated_at\": \"2021-04-27T01:27:55.608521\"\n    },\n    {\n        \"todo_list_id\": \"ef825295-e46b-4f49-bd18-08ce114868bf\",\n        \"name\": \"New Todo list\",\n        \"created_at\": \"2021-04-27T01:15:33.860270\",\n        \"updated_at\": \"2021-04-27T01:15:33.860270\"\n    },\n    {\n        \"todo_list_id\": \"6c0900dc-7bda-45e0-a373-1cddc4527560\",\n        \"name\": \"Updated Todo List name\",\n        \"created_at\": \"2021-04-27T01:12:17.025394\",\n        \"updated_at\": \"2021-04-27T01:12:17.150310\"\n    },\n    {\n        \"todo_list_id\": \"ea97683f-80d3-4024-914f-eedb36766214\",\n        \"name\": \"test todo list\",\n        \"created_at\": \"2021-04-26T22:44:05.812800\",\n        \"updated_at\": \"2021-04-26T22:44:05.812800\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Get Todo list by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/todo_list/{{todo_list_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"todo_list",
+								"{{todo_list_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Get Todo list by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/todo_list/{{todo_list_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"todo_list",
+										"{{todo_list_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "2455"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 27 Apr 2021 06:30:20 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"todo_list_id\": \"64585807-5e2e-4031-b257-979795c47e25\",\n    \"name\": \"test todo list\",\n    \"created_at\": \"2021-04-27T06:25:00.955533\",\n    \"updated_at\": \"2021-04-27T06:25:00.955533\",\n    \"todo_count\": 9,\n    \"todo\": [\n        {\n            \"todo_id\": \"8484d0f1-e186-4c36-8541-6d64a50cc85b\",\n            \"todo_list_id\": \"64585807-5e2e-4031-b257-979795c47e25\",\n            \"name\": \"test todo\",\n            \"description\": \"test description\",\n            \"created_at\": \"2021-04-27T06:28:36.505803\",\n            \"updated_at\": \"2021-04-27T06:28:36.505803\",\n            \"status\": 1\n        },\n        {\n            \"todo_id\": \"6d908ea1-6f12-40ce-96fb-7dc6c4c6486d\",\n            \"todo_list_id\": \"64585807-5e2e-4031-b257-979795c47e25\",\n            \"name\": \"test todo\",\n            \"description\": \"test description\",\n            \"created_at\": \"2021-04-27T06:28:36.004541\",\n            \"updated_at\": \"2021-04-27T06:28:36.004541\",\n            \"status\": 1\n        },\n        {\n            \"todo_id\": \"1d392708-96aa-4e65-b018-d63e797f8794\",\n            \"todo_list_id\": \"64585807-5e2e-4031-b257-979795c47e25\",\n            \"name\": \"test todo\",\n            \"description\": \"test description\",\n            \"created_at\": \"2021-04-27T06:28:35.381795\",\n            \"updated_at\": \"2021-04-27T06:28:35.381795\",\n            \"status\": 1\n        },\n        {\n            \"todo_id\": \"52e46507-9bcf-4050-b2d5-ec92ca5ed837\",\n            \"todo_list_id\": \"64585807-5e2e-4031-b257-979795c47e25\",\n            \"name\": \"test todo\",\n            \"description\": \"test description\",\n            \"created_at\": \"2021-04-27T06:28:34.557430\",\n            \"updated_at\": \"2021-04-27T06:28:34.557430\",\n            \"status\": 1\n        },\n        {\n            \"todo_id\": \"ae48b24d-1018-47bf-95bd-32e00dda54d0\",\n            \"todo_list_id\": \"64585807-5e2e-4031-b257-979795c47e25\",\n            \"name\": \"test todo\",\n            \"description\": \"test description\",\n            \"created_at\": \"2021-04-27T06:27:22.422855\",\n            \"updated_at\": \"2021-04-27T06:27:22.422855\",\n            \"status\": 1\n        },\n        {\n            \"todo_id\": \"56cb46a1-a5e3-4c1b-9327-9b383ebd388c\",\n            \"todo_list_id\": \"64585807-5e2e-4031-b257-979795c47e25\",\n            \"name\": \"test todo\",\n            \"description\": \"test description\",\n            \"created_at\": \"2021-04-27T06:27:21.808297\",\n            \"updated_at\": \"2021-04-27T06:27:21.808297\",\n            \"status\": 1\n        },\n        {\n            \"todo_id\": \"b84469db-b755-426c-8c85-93d0b677fee0\",\n            \"todo_list_id\": \"64585807-5e2e-4031-b257-979795c47e25\",\n            \"name\": \"test todo\",\n            \"description\": \"test description\",\n            \"created_at\": \"2021-04-27T06:27:21.191168\",\n            \"updated_at\": \"2021-04-27T06:27:21.191168\",\n            \"status\": 1\n        },\n        {\n            \"todo_id\": \"6117881b-dc3d-4f81-bb65-f1dd78ec77dc\",\n            \"todo_list_id\": \"64585807-5e2e-4031-b257-979795c47e25\",\n            \"name\": \"test todo\",\n            \"description\": \"test description\",\n            \"created_at\": \"2021-04-27T06:27:20.506223\",\n            \"updated_at\": \"2021-04-27T06:27:20.506223\",\n            \"status\": 1\n        },\n        {\n            \"todo_id\": \"0f9cb32d-94ad-4595-8723-497a3acc9b4d\",\n            \"todo_list_id\": \"64585807-5e2e-4031-b257-979795c47e25\",\n            \"name\": \"test todo\",\n            \"description\": \"test description\",\n            \"created_at\": \"2021-04-27T06:27:15.481881\",\n            \"updated_at\": \"2021-04-27T06:27:15.481881\",\n            \"status\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Todo list",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/todo_list/{{todo_list_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"todo_list",
+								"{{todo_list_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Delete Todo list",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/todo_list/{{todo_list_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"todo_list",
+										"{{todo_list_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "4"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "date",
+									"value": "Sun, 25 Apr 2021 14:24:31 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "null"
+						},
+						{
+							"name": "404 Delete Todo list",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/todo_list/{{todo_list_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"todo_list",
+										"{{todo_list_id}}"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "73"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "date",
+									"value": "Sun, 25 Apr 2021 14:23:49 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error_type\": \"not_found\",\n    \"error_message\": \"Requested resource not found\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Todo",
+			"item": [
+				{
+					"name": "Create Todo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"test todo\",\n    \"description\": \"test description\",\n    \"todo_list_id\": \"64585807-5e2e-4031-b257-979795c47e25\",\n    \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/todo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"todo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Create Todo",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"test todo\",\n    \"description\": \"test description\",\n    \"todo_list_id\": \"5e079293-a901-4d5c-8521-c51452ce5394\",\n    \"status\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/todo",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"todo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "251"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 27 Apr 2021 03:39:47 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"todo_id\": \"9065b43e-961c-4d81-89c6-51582e2ef41a\",\n    \"todo_list_id\": \"5e079293-a901-4d5c-8521-c51452ce5394\",\n    \"name\": \"test todo\",\n    \"description\": \"test description\",\n    \"created_at\": \"2021-04-27T03:39:47.340971\",\n    \"updated_at\": \"2021-04-27T03:39:47.340971\",\n    \"status\": 1\n}"
+						},
+						{
+							"name": "400 Create Todo",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"test todo\",\n    \"description\": \"test description\",\n    \"todo_list_id\": \"5e079293-a901-4d5c-8521-c51452ce5394\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/todo",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"todo"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "59"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 27 Apr 2021 03:40:15 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error_type\": \"bad_request\",\n    \"error_message\": \"Invalid data\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Todo Status",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"todo_id\": \"83419b45-8a7b-4d16-bd11-c3fd71969ae2\",\n    \"status\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/v1/todo",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"todo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Update Todo Status",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"todo_id\": \"83419b45-8a7b-4d16-bd11-c3fd71969ae2\",\n    \"status\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/api/v1/todo",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"todo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "251"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 27 Apr 2021 04:00:06 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"todo_id\": \"83419b45-8a7b-4d16-bd11-c3fd71969ae2\",\n    \"todo_list_id\": \"5e079293-a901-4d5c-8521-c51452ce5394\",\n    \"name\": \"test todo\",\n    \"description\": \"test description\",\n    \"created_at\": \"2021-04-27T03:52:40.777448\",\n    \"updated_at\": \"2021-04-27T04:00:06.869002\",\n    \"status\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Todo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/todo/{{todo_id}}",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"todo",
+								"{{todo_id}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200 Delete Todo",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/v1/todo/{{todo_id}}",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"todo",
+										"{{todo_id}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "content-length",
+									"value": "4"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json"
+								},
+								{
+									"key": "date",
+									"value": "Tue, 27 Apr 2021 04:17:22 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "null"
+						}
+					]
+				}
+			]
+		}
+	]
+}

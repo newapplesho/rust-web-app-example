@@ -1,0 +1,12 @@
+version: '3.7'
+services:
+  flyway:
+    image: flyway/flyway:7.3.2
+    command: migrate
+    volumes:
+      - ./db/migrations:/flyway/sql
+    environment:
+      FLYWAY_URL: jdbc:postgresql://postgresql/example_db
+      FLYWAY_USER: postgres
+      FLYWAY_PASSWORD: example
+      FLYWAY_CONNECT_RETRIES: 60
