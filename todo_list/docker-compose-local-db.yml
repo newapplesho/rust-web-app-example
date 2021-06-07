@@ -2,8 +2,8 @@ version: '3.7'
 services:
   postgresql:
     build:
-      context: ..
-      dockerfile: db/Dockerfile
+      context: .
+      dockerfile: ./db/Dockerfile
     image: example_db
     environment:
       POSTGRES_PASSWORD: example
