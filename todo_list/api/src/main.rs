@@ -7,6 +7,7 @@ use crate::handler::todo_list_handler::{
 use actix_cors::Cors;
 use actix_web::error::InternalError;
 use actix_web::{web, App, HttpServer, ResponseError};
+use actix_web::http::header;
 use dotenv::dotenv;
 use infrastructure::repository::connection_manager::DBContext;
 use serde::Deserialize;
@@ -69,7 +70,12 @@ async fn main() -> Result<(), actix_web::Error> {
                 .into()
             }))
             .data(server_data.clone())
-            .wrap(Cors::default().supports_credentials())
+            .wrap(Cors::default().allowed_origin_fn(|origin, _req_head| true)
+                .allowed_methods(vec!["GET", "POST"])
+                .allowed_headers(vec![header::AUTHORIZATION, header::ACCEPT])
+                .allowed_header(header::CONTENT_TYPE)
+                .supports_credentials()
+                .max_age(3600))
             .service(health_check)
             .service(
                 web::scope("api/v1")
