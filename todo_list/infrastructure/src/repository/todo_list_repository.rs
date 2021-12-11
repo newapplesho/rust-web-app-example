@@ -167,7 +167,7 @@ impl ITodoListRepository for DBContext {
         .await
         .map_err(map_sqlx_error)?;
 
-        tx.commit().await.map_err(map_sqlx_error);
+        tx.commit().await.map_err(map_sqlx_error)?;
         Ok(updated_todo_list)
     }
 

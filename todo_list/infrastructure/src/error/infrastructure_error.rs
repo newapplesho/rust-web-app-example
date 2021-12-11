@@ -1,6 +1,5 @@
 use domain::error::domain_error::DomainError;
 use log::error;
-use sqlx::Error;
 
 pub fn map_sqlx_error(e: sqlx::Error) -> DomainError {
     match e {
