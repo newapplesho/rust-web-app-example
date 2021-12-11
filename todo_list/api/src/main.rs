@@ -41,7 +41,7 @@ async fn main() -> Result<(), actix_web::Error> {
     // Setup backtrace
     std::env::set_var("RUST_BACKTRACE", "full");
 
-    let host = server_config.host.unwrap_or("0.0.0.0".parse().unwrap());
+    let host = server_config.host.unwrap_or_else(||"0.0.0.0".parse().unwrap());
     let port = server_config.port.unwrap_or(8080);
 
     let server_data = ServerData {
